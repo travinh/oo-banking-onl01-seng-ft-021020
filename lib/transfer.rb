@@ -21,7 +21,7 @@ class Transfer
     if self.valid? and @receiver.balance ==1000 and @sender.balance ==1000
       @receiver.balance += amount
       @sender.balance -=amount
-      @status = "complete"
+      self.status = "complete"
     else 
       reject
     end
