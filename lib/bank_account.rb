@@ -8,5 +8,25 @@ class BankAccount
     @balance = 1000
     @status = "open"
   end
+  
+  def deposit(amount)
+    @balance += amount
+  end
+  
+  def display_balance
+    @balance 
+  end
+  
+  def valid?
+    if @balance > 0 and @status == "open"
+      true 
+    else
+      false
+    end
+  end
+  
+  def close_account
+    
+  end
 
 end
