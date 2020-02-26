@@ -23,8 +23,7 @@ class Transfer
       @sender.balance -=amount
       @status = "complete"
     else 
-      @status = "rejected"
-      "Transaction rejected. Please check your account balance."
+      reject
     end
   end
   
@@ -34,6 +33,11 @@ class Transfer
       @sender.balance +=amount
       @status = "reversed"
     end
+  end
+  
+  def reject 
+    @status = "rejected"
+    "Transaction rejected. Please check your account balance."
   end
   
 end
